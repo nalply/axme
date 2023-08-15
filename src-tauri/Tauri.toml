@@ -1,0 +1,55 @@
+[build]
+beforeBuildCommand = "npm run build"
+beforeDevCommand = "wds"
+devPath = "https://dev.ly5.ch:3220/"
+distDir = "../dist"
+
+[package]
+productName = "axme"
+version = "0.0.1"
+
+[tauri.allowlist]
+all = false
+
+[tauri.bundle]
+active = true
+category = "DeveloperTool"
+copyright = ""
+externalBin = [ ]
+icon = [
+  "icons/32x32.png",
+  "icons/128x128.png",
+  "icons/128x128@2x.png",
+  "icons/icon.icns",
+  "icons/icon.ico"
+]
+identifier = "ch.axd.axme"
+longDescription = ""
+resources = [ ]
+shortDescription = ""
+targets = "all"
+
+  [tauri.bundle.deb]
+  depends = [ ]
+
+  [tauri.bundle.macOS]
+  exceptionDomain = ""
+  frameworks = [ ]
+
+  [tauri.bundle.windows]
+  digestAlgorithm = "sha256"
+  timestampUrl = ""
+
+[tauri.security]
+
+[tauri.updater]
+active = false
+
+[[tauri.windows]]
+fullscreen = false
+height = 600
+resizable = true
+title = "axme -- Markdown editor"
+width = 800
+
+# Copyright 2023 Daniel Ly; SPDX-License-Identifier: ISC+

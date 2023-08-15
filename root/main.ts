@@ -18,7 +18,7 @@ const dump: KeyBinding[] = [{
     ;(async () => {
       const result = await invoke('test_command')
       const changes = { from: 0, insert: result + "\n" }
-      view.dispatch({ changes })
+      window.axme.codemirror.view.dispatch({ changes })
     })()
     
     return true
@@ -32,7 +32,26 @@ const state = EditorState.create({
     keymap.of(dump),
   ],
 })
-const view = new EditorView({
-  state, parent: document.body
-})
 
+const parent = document.body
+
+const view = new EditorView({ state, parent })
+
+declare global {
+  interface Window { axme: {
+    codemirror: {
+      view: EditorView
+      keymap: typeof keymap
+    },
+    tauri: {
+      invoke: typeof invoke
+    },
+  } }
+}
+
+window.axme = {
+  codemirror: { view, keymap },
+  tauri: { invoke },
+}
+
+// Copyright 2023 Daniel Ly; SPDX-License-Identifier: ISC+

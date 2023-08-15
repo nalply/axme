@@ -22,5 +22,6 @@
     "@codemirror/commands": "^6.2.4",
     "@codemirror/state": "^6.2.1",
     "@codemirror/view": "^6.16.0"
-  }
+  },
+  "//": "Copyright 2023 Daniel Ly; SPDX-License-Identifier: ISC+"
 }

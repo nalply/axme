@@ -12,3 +12,5 @@ fn main() {
 fn test_command() -> String {
     "inside test_command() in Rust".to_string()
 }
+
+// Copyright 2023 Daniel Ly; SPDX-License-Identifier: ISC+

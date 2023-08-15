@@ -10,12 +10,12 @@ edition = "2021"
 rust-version = "1.60"
 
 [build-dependencies]
-tauri-build = { version = "1.4.0", features = [] }
+tauri-build = { version = "1.4.0", features = [ "config-toml" ] }
 
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.4.0", features = [] }
+tauri = { version = "1.4.0", features = ["config-toml"] }
 
 [features]
 # this feature is used for production builds or when `devPath` points to the
@@ -24,3 +24,5 @@ tauri = { version = "1.4.0", features = [] }
 # between tauri's `dev` and `build` modes.
 # DO NOT REMOVE!!
 custom-protocol = [ "tauri/custom-protocol" ]
+
+# Copyright 2023 Daniel Ly; SPDX-License-Identifier: ISC+
